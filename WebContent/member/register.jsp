@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <title>회원가입</title>
+<!--  
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link href="../css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">-->
 <script src="../js/script.js"></script>
 <script type="text/javascript">
 
@@ -23,17 +24,87 @@ window.onload = function(){
 </head>
 
 <body>
+	<h2 align="center">SIGIN UP</h2>
+	<hr style="width:518px">
+	<table align="center">
+		<tr>
+			<td>
+				<label style="width:80px; height:40px; font-size:14px">아이디</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="id" >
+			</td>
+		<td/></tr>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">비밀번호</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+			<input style="width:400px; height:30px;" type="text" name="passwd" >
+			</td>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">비밀번호 확인</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="repasswd" >
+			<td/>
+		</tr>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">이름</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="name" >
+			<td/>
+		</tr>
+		<tr><td colspan=2 style="text-align:center"><br>선택 입력<br><hr style="width:518px; border-style:dotted;"></td></td>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">이메일</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="email" >
+			<td/>
+		</tr>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">휴대전화</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="phone" >
+			<td/>
+		</tr>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">주소</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:300px; height:30px;" type="text" name="address" >
+				<input style="width:95px; height:35px;"
+								type="button" value="우편번호찾기" id="btnZip">
+			<td/>
+		</tr>
+		<tr><td>
+				<label style="width:80px; height:40px; font-size:14px">직업</label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			</td>
+			<td><select style="width:400px; height:40px;" name=job>
+									<option value="0">선택하세요
+									<option value="회사원">회사원
+									<option value="학생">학생
+									<option value="자영업">자영업
+									<option value="주부">주부 
+									<option value="기타">기타
+				</select>
+			<td/>
+		</tr>
+	</table>	
+	</ul>
 	<br>
 	<table class="table">
 		<tr>
-			<td align="center" valign="middle" style="background-color: #FFFFCC">
+			<td align="center" valign="middle" style="background-color: ">
 				<form name="regForm" method="post" action="registerproc.jsp">
 					<table border="1">
-						<tr align="center" style="background-color: #8899aa">
-							<td colspan="2"><b style="color: #FFFFFF">회원 가입</b></td>
+						<tr align="center" style="background-color: grey">
+							<td colspan="2"><b style="color: white">회원가입</b></td>
 						</tr>
 						<tr>
-							<td width="16%">아이디</td>
+							<td style="width:80px; height:40px">아이디</td>
 							<td width="57%"><input type="text" name="id" size="15">
 								<input type="button" value="ID중복확인" id="btnId"></td>
 						</tr>

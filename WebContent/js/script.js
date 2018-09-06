@@ -36,3 +36,13 @@ function inputCheck(){
 	regForm.submit();
 }
 
+function memUpdateFunc(){
+	regForm.submit();
+}
+function memDelFunc(){
+	alert("memDelFunc 호출");
+	
+}
+function memCancelFunc(){
+	location.href="../guest/guest_index.jsp";
+}

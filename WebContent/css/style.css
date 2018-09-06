@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-BODY {FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 굴림 }
+BODY {FONT-SIZE: pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 굴림 }
 
 TD   {FONT-SIZE: 9pt; COLOR: black; LINE-HEIGHT: 160%; FONT-FAMILY: 굴림 }
 
@@ -24,4 +24,4 @@ INPUT {
 
 A:link {text-decoration:none;color:#696969}
 A:hover{text-decoration:yes;color:#66CCFF}
-A:visited {text-decoration:none;color:#330066}
+A:visited {text-decoration:none;color:}

@@ -28,7 +28,7 @@
 <table>
 	<tr><td>
 		[<a href="../index.jsp">메인으로</a>]&nbsp;
-		[<a href="../index.jsp">최근 목록</a>]&nbsp;
+		[<a href="boardlist.jsp">최근 목록</a>]&nbsp;
 		[<a href="boardwrite.jsp">새 글 작성</a>]&nbsp;
 		[<a href="#" onclick="window.open('admin.jsp','','width=300,height=150,top=200,left=300')">관리자용</a>]&nbsp;
 	<br><br>
