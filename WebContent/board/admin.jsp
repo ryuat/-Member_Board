@@ -42,7 +42,7 @@ function check(){
 					<td>I D: <input type="text" name="id"></td>
 				</tr>
 				<tr>
-					<td>PWD: <input type="text" name="pwd"></td>
+					<td>PWD: <input type="password" name="pwd"></td>
 				</tr>
 				<tr>
 					<td>
