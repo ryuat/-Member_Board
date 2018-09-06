@@ -87,4 +87,34 @@ public class MemberManager {
 		
 		return result;
 	}
+	
+	public boolean memInsert(MemberBean bean) {
+		boolean result = false;
+		String sql = "insert into member values(?,?,?,?,?,?,?,?)";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bean.getId());
+			pstmt.setString(2, bean.getPasswd());
+			pstmt.setString(3, bean.getName());
+			pstmt.setString(4, bean.getEmail());
+			pstmt.setString(5, bean.getPhone());
+			pstmt.setString(6, bean.getZipcode());
+			pstmt.setString(7, bean.getAddress());
+			pstmt.setString(8, bean.getJob());
+			
+			result = pstmt.executeUpdate() > 0 ? true:false; 
+		} catch (Exception e) {
+			System.out.println("memInsert() err: " + e);
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("memInsert() finally err: " + e2);
+			}
+		}
+		return result;
+	}
 }

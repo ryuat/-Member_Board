@@ -19,8 +19,6 @@ String bip = dto.getBip();
 String bdate = dto.getBdate();
 int readcnt = dto.getReadcnt();
 
-session.setAttribute("pass", pass);
-
 String apass = "*****";
 String adminOk = (String)session.getAttribute("adminOk");
 if(adminOk != null){
@@ -49,8 +47,7 @@ function passCheck(){
 	
 	if(inputPass ==<%=pass%>){
 		if(confirm("정말 삭제하겠습니까?"))
-			location.href = "delet
-			e.jsp?num=<%=num %>&page=<%=spage%>";
+			location.href = "delete.jsp?num=<%=num %>&page=<%=spage%>";
 		<%--<% boardMgr.deleteData(num); %>--%>
 	}else{
 		alert("비밀번호가 틀립니다.")

@@ -74,7 +74,7 @@ if(check.equalsIgnoreCase("n")){
 				
 			%>
 				<tr><td>
-					<a href="#" onclick="javascript:send('<%=list.get(i).getZipcode() %>','<%=list.get(i).getArea1()%>','<%=list.get(i).getArea2()%>','<%=list.get(i).getArea3()%>','<%=list.get(i).getArea4()%>')">
+					<a href="#" onclick="javascript:send('<%=list.get(i).getZipcode() %>','<%=list.get(i).getArea1()%>','<%=list.get(i).getArea2()%>','<%=list.get(i).getArea3()%>','<%=(list.get(i).getArea4()!= null)? list.get(i).getArea4():""%>')">
 					<%=list.get(i).getZipcode()%>&nbsp;
 					<%=list.get(i).getArea1()%>&nbsp;
 					<%=list.get(i).getArea2()%>&nbsp;

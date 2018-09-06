@@ -73,8 +73,8 @@ window.onload = function(){
 									<option value="회사원">회사원
 									<option value="학생">학생
 									<option value="자영업">자영업
-									<option value="주부">주부 기타
-									<option value="기타">
+									<option value="주부">주부 
+									<option value="기타">기타
 							</select></td>
 						</tr>
 						<tr>

@@ -31,7 +31,7 @@ System.out.println(result);
 }else{
 %>
 	<b><%=id%>는(은) 사용할 수 있는 아이디입니다.</b><p>
-	<input type="button" onclick="opener.document.regForm.id.value=<%=id%>; window.close();" value="사용">
+	<input type="button" onclick="opener.document.regForm.id.value='<%=id%>'; window.close();" value="사용">
 	<input type="button" onclick="opener.document.regForm.id.value='';opener.document.regForm.id.focus(); window.close();" value="다시입력">
 <%}
 

@@ -13,6 +13,26 @@ function idCheck(){
 	}
 }
 function inputCheck(){
-	alert("inputCheck");
+	if(regForm.id.value == ""){
+		alert("아이디를 입력하세요.");
+		regForm.id.focus();
+		return;
+	}
+	if(regForm.passwd.value == ""){
+		alert("비밀번호를 입력하세요.");
+		regForm.passwd.focus();
+		return;
+	}
+	if(regForm.passwd.value != regForm.repasswd.value){
+		alert("입력한 두 비밀번호가 다릅니다.");
+		regForm.passwd.focus();
+		return;
+	}
+	if(regForm.job.value === "0"){
+		alert("직업을 선택하세요.");
+		regForm.job.focus();
+		return;
+	}
+	regForm.submit();
 }
 
