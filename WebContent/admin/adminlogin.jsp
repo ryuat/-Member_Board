@@ -40,9 +40,9 @@ function funcAdminLogin(){
 %>
 <body>
 <h2 align=center>관리자 로그인</h2>&nbsp;&nbsp;&nbsp;&nbsp; 
-<hr style="width:518px">
+<hr style="width:490px">
 <form action="adminloginproc.jsp" name="adminloginForm" method="post">
-<table align="center">
+<table style="margin: 0 auto;">
 		<tr>
 			<td colspan=2 style="text-align:center">
 			

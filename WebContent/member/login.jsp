@@ -17,7 +17,7 @@ id = id ==null ? adminOk:id;
 <script type="text/javascript">
 window.onload = function(){
 	document.getElementById("btnLogin").addEventListener("click", funcLogin, false);
-	document.getElementById("btnNewMember").addEventListener("click", funcNew, false);
+	//document.getElementById("btnNewMember").addEventListener("click", funcNew, false);
 }
 function funcLogin(){
 	if(loginForm.id.value === "" ){
@@ -36,12 +36,12 @@ function funcLogin(){
 	loginForm.submit();
 }
 
-function funcNew(){
-	location.href = "register.jsp";
-}
+//function funcNew(){
+//	location.href = "register.jsp";
+//}
 
 </script>
-<link rel="stylesheet" type="text/css" href="../css/board.css">
+<!-- <link rel="stylesheet" type="text/css" href="../css/board.css"> -->
 </head>
 <body>
 <%
@@ -53,28 +53,37 @@ if(id != null ){
 <%	
 }else{
 %>	
-	<form action="" name=loginForm>
-		<table>
-			<tr>
-				<td colspan="2"><b>** 로그인 **</b></td>
-			</tr>
-			<tr>
-				<td>아이디: </td>
-				<td><input type="text" name="id"></td>
-			</tr>
-			<tr>
-				<td>비밀번호: </td>
-				<td><input type="text" name="passwd"></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="button" value="로그인" id="btnLogin">
-					<input type="button" value="회원가입" id="btnNewMember">	
-				</td>
-			</tr>
-			
-			
-		</table>
+<h2 align=center>로그인</h2>&nbsp;&nbsp;&nbsp;&nbsp; 
+<form action="" name=loginForm>
+	<table style="margin: 0 auto;">
+		<tr>
+			<td colspan=2 style="text-align:center">
+				<hr style="width:518px">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label style="width:80px; height:40px; font-size:14px">아이디</label>&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="text" name="id" >
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label style="width:80px; height:40px; font-size:14px">비밀번호</label>&nbsp;&nbsp; 
+			</td>
+			<td>
+				<input style="width:400px; height:30px;" type="password" name="passwd" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<br>
+				<input style="width:518px; height:30px;" type="button"	value="로그인" id="btnLogin"> <br> 
+			</td>
+		</tr>
+	</table>	
 	</form>
 <%}
 %>
