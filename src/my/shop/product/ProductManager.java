@@ -138,4 +138,62 @@ public class ProductManager {
 		
 		return bean;
 	}
+	
+	
+	// 관리자 udpate 상품
+	public boolean updateProduct(HttpServletRequest request) {
+		
+		boolean result =false;
+		String uploadDir = "C:\\work\\wsou\\myshop\\WebContent\\data";
+		
+		try {
+			MultipartRequest multi = new MultipartRequest(request, uploadDir, 1024*1024*5, "UTF-8", new DefaultFileRenamePolicy()); // cos.jar 필요
+			conn = ds.getConnection();
+			String sql = "update shop_product set name=?, price=?, detail=?, stock=?, image=? where no = ?";
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  multi.getParameter("name"));
+			pstmt.setString(2, multi.getParameter("price"));
+			pstmt.setString(3, multi.getParameter("detail"));
+			pstmt.setString(4, multi.getParameter("stock"));
+			if(multi.getFilesystemName("image") == null) {
+				pstmt.setString(5, "ready.gif");
+			}else {
+				pstmt.setString(5, multi.getFilesystemName("image"));
+			}
+			System.out.println("test no : " +multi.getParameter("no") );
+			pstmt.setString(6, multi.getParameter("no"));
+			
+			if(pstmt.executeUpdate() > 0) {
+				result = true;
+			}
+		} catch (Exception e) {
+			System.out.println("updateProduct() err " + e);
+		} finally {
+			
+		}
+		return result;
+	}
+	// 관리자 delete 상품
+		public boolean deleteProduct(String no) {
+			boolean result =false;
+			
+			try {
+				conn = ds.getConnection();
+				String sql = "delete from shop_product where no = ?";
+				
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1,  no);
+	
+	
+				if(pstmt.executeUpdate() > 0) {
+					result = true;
+				}
+			} catch (Exception e) {
+				System.out.println("updateProduct() err " + e);
+			} finally {
+				
+			}
+			return result;
+		}
 }

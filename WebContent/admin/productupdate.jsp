@@ -19,7 +19,7 @@ ProductBean bean = productMgr.getProduct(request.getParameter("no"));
 <%@include file="admin_top.jsp" %>
 <br>
 
-<form action="productproc.jsp?flag=delete" method="post"> 
+<form action="productproc.jsp?flag=update" method="post" enctype="multipart/form-data" > 
 <table style="margin: 0 auto;">
 	<tr>
 		<td><input type="hidden" name="no" value=<%=bean.getNo() %>> </td>
@@ -64,7 +64,7 @@ ProductBean bean = productMgr.getProduct(request.getParameter("no"));
 	<tr><td colspan =2 style="text-align: center">
 		<br>
 		<input  type="submit" value="수정완료">
-		<input  type="button" value="상품목록" id="back" onclick="back">
+		<input  type="button" value="상품목록" onclick="back()">
 	</td>
 	</tr>
 

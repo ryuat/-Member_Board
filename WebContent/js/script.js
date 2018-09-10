@@ -66,3 +66,14 @@ function memUpdateCancelAdminFunc(){
 function productDetail(no){
 	location.href= "productdetail.jsp?no="+no;
 }
+function productUpdate(no){
+	location.href= "productupdate.jsp?no="+no;
+}
+function productDelete(no){
+	confirm("정말 삭제하시겠습니까?");
+	location.href= "productproc.jsp?flag=delete&no="+no;
+}
+
+function back(){
+	location.href="productmanager.jsp";
+}
