@@ -61,3 +61,8 @@ function memUpdateAdminFunc(){
 function memUpdateCancelAdminFunc(){
 	location.href = "membermanager.jsp";
 }
+
+// 관리자 product 상세보기
+function productDetail(no){
+	location.href= "productdetail.jsp?no="+no;
+}
