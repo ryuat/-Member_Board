@@ -11,8 +11,6 @@
 </head>
 <body>
 <br>
-<h1 align=center>KIC MALL</h1>
-
 <%@include file="guest_top.jsp" %>
 <table align=center style="width:80%;">
 	<tr>

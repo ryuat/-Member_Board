@@ -25,7 +25,9 @@
 </script>
 </head>
 <body>
-<table>
+<%@include file="board_top.jsp" %>
+<br>
+<table style="margin: 0 auto;">
 	<tr><td>
 		[<a href="../index.jsp">메인으로</a>]&nbsp;
 		[<a href="boardlist.jsp">최근 목록</a>]&nbsp;

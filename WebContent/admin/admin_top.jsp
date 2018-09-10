@@ -21,15 +21,15 @@ if(id == null){
 <link href="../css/style.css" rel="stylesheet" type=""/>
 </head>
 <body>
-<h2 align=center>관리자 모드</h1>
-<table align=center >
+<h2 align=center>관리자 모드</h2>
+<table align=center>
 	<tr>
 	<td><a style='text-decoration:none' href="adminlogout.jsp">[로그아웃]</a></td>
 	<td><a style="text-decoration: none" href="../index.jsp" >[메인]</a></td>
 	<td><a style='text-decoration:none' href="productlist.jsp">[상품목록]</a></td>
 	<td><a style='text-decoration:none' href="cartlist">[장바구니]</a></td>
 	<td><a style='text-decoration:none' href="../board/boardlist.jsp">[게시판]</a></td>
-		<td><a style='text-decoration:none; color: red'  href="productmanager.jsp">[상품관리]</a></td>
+	<td><a style='text-decoration:none; color: red'  href="productmanager.jsp">[상품관리]</a></td>
 	<td><a style='text-decoration:none; color: red' href="../admin/membermanager.jsp">[회원관리]</a></td>
 	</tr>
 </table>
