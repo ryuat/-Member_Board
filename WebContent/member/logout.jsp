@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <% session.removeAttribute("idKey"); 
-	session.removeAttribute("adminOk"); %>
+	//session.removeAttribute("adminOk"); %>
 <!DOCTYPE html>
 <html>
 <head>

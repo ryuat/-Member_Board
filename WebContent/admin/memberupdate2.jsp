@@ -1,44 +1,35 @@
 <%@page import="my.shop.member.MemberBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <jsp:useBean id="memberMgr" class="my.shop.member.MemberManager"/>
+<%
 
-
-<% 
 request.setCharacterEncoding("utf-8");
-String id = (String)session.getAttribute("idKey");
-String admin = (String)session.getAttribute("adminOk");
+String id = request.getParameter("id");
 MemberBean bean = memberMgr.getMember(id);
-if(admin != null){
 
-	//return;
-}
-if(bean == null){
-	response.sendRedirect("../guest/guest_index.jsp");
-	return;
-}
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원수정-관리자</title>
 <script src="../js/script.js"></script>
 <script>
 window.onload = function(){
-	document.getElementById("btnSubmit").onclick = memUpdateFunc;
-	document.getElementById("btnDel").onclick = memDelFunc;
-	document.getElementById("btnCancel").onclick = memCancelFunc;
+	document.getElementById("btnSubmit").onclick = memUpdateAdminFunc;
+
+	document.getElementById("btnCancel").onclick = memUpdateCancelAdminFunc;
 }
 </script>
 </head>
-
 <body>
-	<br>
 	<table align=center class="table">
 		<tr>
 			<td align="center" valign="middle" style="background-color: ">
-				<form name="regForm" method="post" action="memberupdateproc.jsp">
+				<form name="updateFormAdmin" method="post" action="memberupdateproc2.jsp">
 					<table border="1">
 						<tr align="center" style="background-color: grey">
 							<td colspan="2"><b style="color: white">회원수정</b></td>
@@ -85,7 +76,6 @@ window.onload = function(){
 						<tr>
 							<td colspan="2" align="center">
 							<input type="button" style="hegiht:80px; width:500px; color: white; background-color: rgb(0, 0, 0);" value="수정" id="btnSubmit"><br> 
-						    <input type="button" style="hegiht:80px; width:500px; color: white; background-color: rgb(0, 0, 0);" value="회원탈퇴" id="btnDel"><br>
 						      <input type="button" style="hegiht:80px; width:500px; color: white; background-color: rgb(0, 0, 0);" value="수정취소" id="btnCancel"></td>
 						</tr>
 					</table>

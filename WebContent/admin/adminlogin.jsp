@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%
+//String id = (String)session.getAttribute("idKey");
+String admin = (String)session.getAttribute("adminOk");
+
+//id = id == null ? admin : id;
+if(admin != null){
+		%>
+		<script>location.href="../admin/admin_index.jsp";</script>
+		<%
+	return;
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +24,7 @@ window.onload= function(){
 	document.getElementById("btnLogin").onclick = funcAdminLogin;
 }
 function funcAdminLogin(){
+
 	if(adminloginForm.id.value==""){
 		alert("아이디를 입력하세요.");
 		adminloginForm.id.getfoucs();
@@ -36,7 +50,10 @@ function funcAdminLogin(){
 	//out.println("로그인성공<br>");
 //}else{
 	//out.println("로그인실패<br>");
+	
 //}
+
+
 %>
 <body>
 <h2 align=center>관리자 로그인</h2>&nbsp;&nbsp;&nbsp;&nbsp; 

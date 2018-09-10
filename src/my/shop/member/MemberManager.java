@@ -249,4 +249,46 @@ public class MemberManager {
 		}
 		return result;
 	}
+	
+	
+	// admin 관련
+	
+	public ArrayList<MemberBean> getMemeberAll(){
+		ArrayList<MemberBean> list = new ArrayList<MemberBean>();
+		try {
+			conn = ds.getConnection();
+			String sql = "select * from member";
+			pstmt = conn.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			System.out.println("test1");
+			while(rs.next()) {
+				MemberBean bean = new MemberBean();
+				bean.setId(rs.getString("id"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setName(rs.getString("name"));
+				bean.setEmail(rs.getString("email"));
+				bean.setPhone(rs.getString("phone"));
+				bean.setPasswd(rs.getString("passwd"));
+				bean.setZipcode(rs.getString("zipcode"));
+				bean.setAddress(rs.getString("address"));
+				bean.setJob(rs.getString("job"));
+				list.add(bean);
+
+			}			
+
+		} catch (Exception e) {
+			System.out.println("getMemeberAll() err: " + e);
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("getMemeberAll() finally err: " + e2);
+			}
+		}
+		
+		return list;
+	}
 }

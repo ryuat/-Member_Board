@@ -46,3 +46,18 @@ function memDelFunc(){
 function memCancelFunc(){
 	location.href="../guest/guest_index.jsp";
 }
+
+
+// 관리자가 회원 수정
+function memUpdate(id){
+	document.updateFrm.id.value = id;
+	document.updateFrm.submit();
+}
+
+function memUpdateAdminFunc(){
+	document.updateFormAdmin.submit();
+}
+
+function memUpdateCancelAdminFunc(){
+	location.href = "membermanager.jsp";
+}

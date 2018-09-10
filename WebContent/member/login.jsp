@@ -3,8 +3,8 @@
 <%
 request.setCharacterEncoding("utf-8");
 String id = (String)session.getAttribute("idKey");
-String adminOk = (String)session.getAttribute("adminOk");
-id = id ==null ? adminOk:id;
+//String adminOk = (String)session.getAttribute("adminOk");
+//id = id ==null ? adminOk:id;
 %>
 
 
@@ -53,7 +53,7 @@ if(id != null ){
 <%	
 }else{
 %>	
-<h2 align=center>로그인</h2>&nbsp;&nbsp;&nbsp;&nbsp; 
+<h2 align=center>로그인</h2>&nbsp;&nbsp;&nbsp;&nbsp;
 <form action="" name=loginForm>
 	<table style="margin: 0 auto;">
 		<tr>

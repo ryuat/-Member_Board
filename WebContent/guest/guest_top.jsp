@@ -12,8 +12,8 @@
 <%
 
 String id = (String)session.getAttribute("idKey");
-String adminOk = (String)session.getAttribute("adminOk");
-id = id ==null ? adminOk:id;
+//String adminOk = (String)session.getAttribute("adminOk");
+//id = id ==null ? adminOk:id;
 String log ="";
 String mem="";
 
