@@ -32,10 +32,10 @@ if(id == null){
 	<td><%=log%></td>
 	<td><%=mem%></td>
 	<td><a style='text-decoration:none' href="productlist.jsp">[상품목록]</a></td>
-	<td><a style='text-decoration:none' href="cartlist">[장바구니]</a></td>
+	<td><a style='text-decoration:none' href="cartlist.jsp">[장바구니]</a></td>
+	<td><a style='text-decoration:none' href="orderlist.jsp">[주문목록]</a></td>
 	<td><a style='text-decoration:none' href="../board/boardlist.jsp">[게시판]</a></td>
 	</tr>
-
 </table>
 </body>
 </html>

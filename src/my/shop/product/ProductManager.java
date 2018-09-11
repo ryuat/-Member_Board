@@ -96,7 +96,13 @@ public class ProductManager {
 		} catch (Exception e) {
 			System.out.println("insertProduct() err " + e);
 		} finally {
-			
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("insertProduct() finally err: " + e2);
+			}
 		}
 		return result;
 	}
@@ -170,30 +176,70 @@ public class ProductManager {
 		} catch (Exception e) {
 			System.out.println("updateProduct() err " + e);
 		} finally {
-			
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("updateProduct() finally err: " + e2);
+			}
 		}
 		return result;
 	}
 	// 관리자 delete 상품
-		public boolean deleteProduct(String no) {
-			boolean result =false;
+	public boolean deleteProduct(String no) {
+		boolean result =false;
+		
+		try {
+			conn = ds.getConnection();
+			String sql = "delete from shop_product where no = ?";
 			
-			try {
-				conn = ds.getConnection();
-				String sql = "delete from shop_product where no = ?";
-				
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1,  no);
-	
-	
-				if(pstmt.executeUpdate() > 0) {
-					result = true;
-				}
-			} catch (Exception e) {
-				System.out.println("updateProduct() err " + e);
-			} finally {
-				
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  no);
+
+
+			if(pstmt.executeUpdate() > 0) {
+				result = true;
 			}
-			return result;
+		} catch (Exception e) {
+			System.out.println("updateProduct() err " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("updateProduct() finally err: " + e2);
+			}
 		}
+		return result;
+	}
+		
+
+	// 고객이 상품 주문 시 주문 수 만큼 재고량에서 빼기
+	public void reduceProduct(OrderBean order) {
+
+		try {
+			conn = ds.getConnection();
+			String sql = "update shop_product set stock=(stock-?) where no = ?";
+			
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,  order.getQuantity());
+			pstmt.setString(2,  order.getProduct_no());
+
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("reduceProduct() err " + e);
+		} finally {
+			try {
+				if(rs != null) rs.close();
+				if(pstmt != null) pstmt.close();
+				if(conn != null) conn.close();
+			} catch (Exception e2) {
+				System.out.println("reduceProduct() finally err: " + e2);
+			}
+		}
+	}
+		
 }

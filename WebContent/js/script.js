@@ -77,3 +77,34 @@ function productDelete(no){
 function back(){
 	location.href="productmanager.jsp";
 }
+
+
+// 장바구니 관련
+
+function cartUpdate(form){
+	location.href="cartproc.jsp?flag=update&product_no="+form.product_no.value+"&quantity=" +form.quantity.value;
+}
+
+function cartDelete(form){
+
+	location.href="cartproc.jsp?flag=delete&product_no="+form.product_no.value;
+}
+
+
+// 주문 관련
+
+function orderFunc(){
+	
+	location.href="orderproc.jsp";
+}
+
+function orderDetail(no){
+	detailFrm.no.value = no;
+	detailFrm.submit();
+}
+
+function orderUpdate(form){
+//	alert(	.orderDetailFrm.flag.value );
+	form.flag.value = "update";
+	form.submit();
+}
